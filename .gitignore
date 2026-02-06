@@ -62,6 +62,18 @@ private/
 secrets/
 credentials/
 
+# Generated files
+dashboard.html
+extract_wisdom_output.md
+
+# Personal/Local content
+MEMORY/
+TODO.md
+
+# Obsidian
+.obsidian/
+MEMORY/.obsidian/
+
 # PAI Update System (sideloading)
 .claude/pai_updates/
 .claude/pai_backups/
