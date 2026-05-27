@@ -23,18 +23,18 @@ This document tracks all platform-specific code and dependencies across PAI, pro
 
 **Critical Blockers:**
 1. ✅ `sed -i ''` syntax (macOS BSD vs GNU sed)
-   - **File:** `Packs/pai-voice-system/INSTALL.md` line 337
+   - **File:** Voice system INSTALL.md
    - **Fix:** Platform-aware sed with USERNAME fallback
    - **Status:** Fixed with conditional `uname -s` detection
 
 2. ✅ `/opt/homebrew/bin` hardcoded in PATH
-   - **Files:** `pai-observability-server/src/observability/manage.sh:8`, `pai-observability-server.md:1316`
+   - **Files:** `pai-observability-server/src/Observability/manage.sh:8`, `pai-observability-server.md:1316`
    - **Fix:** Conditional PATH based on directory existence
    - **Status:** Fixed with `[ -d "/opt/homebrew/bin" ]` check
 
 **Auto-Start Feature Parity:**
 3. ✅ LaunchAgent plist only (no Linux alternative)
-   - **File:** `Packs/pai-voice-system/INSTALL.md` Step 9
+   - **File:** Voice system INSTALL.md Step 9
    - **Fix:** Added systemd user service for Linux
    - **Status:** Linux now has full auto-start support
 
@@ -50,9 +50,18 @@ This document tracks all platform-specific code and dependencies across PAI, pro
 
 **Documentation:**
 6. ✅ VERIFY.md misleading "requires modifications" warning
-   - **File:** `Packs/pai-voice-system/VERIFY.md` lines 11-13
+   - **File:** Voice system VERIFY.md
    - **Fix:** Updated to reflect Linux is fully supported
    - **Status:** Documentation now accurate
+
+6a. ✅ `Pulse` vs `PULSE` directory casing mismatch
+   - **Files:** `Releases/v5.0.0/.claude/PAI/PULSE/{run-job,lib,setup,pulse-unified}.ts`,
+     `PULSE/modules/{imessage,user-index}.ts`, `PULSE/Performance/cost-aggregator.ts`,
+     `PULSE/checks/{notification-governor,poller-meta-monitor,github-work}.ts`,
+     `PULSE/Observability/observability.ts` (11 files, 14 occurrences)
+   - **Issue:** Source referenced `~/.claude/PAI/Pulse/...` but directory on disk is `PULSE`. Worked on macOS APFS (case-insensitive default) but broke on Linux ext4 and case-sensitive APFS — config and state lookups silently missed.
+   - **Fix:** Aligned all `path.join(...)` literals to `"PULSE"`.
+   - **Tested:** Linux (Ubuntu, runtime-verified). Behavior unchanged on case-insensitive filesystems (macOS default, NTFS).
 
 ---
 
@@ -60,7 +69,7 @@ This document tracks all platform-specific code and dependencies across PAI, pro
 
 **Audio Playback (Fixed in PR #285 - Google TTS):**
 17. ✅ afplay calls conditionally executed
-    - **File:** `Packs/pai-voice-system/src/voice/server.ts:286-336`
+    - **File:** Voice server source
     - **Status:** Runtime platform detection via `process.platform`
     - **Implementation:** macOS uses afplay, Linux auto-detects mpg123/mpv/snap
 
@@ -87,7 +96,7 @@ This document tracks all platform-specific code and dependencies across PAI, pro
 
 **Documentation Inconsistencies:**
 7. 🔮 Platform check mentions paplay but code doesn't use it
-   - **File:** `Packs/pai-voice-system/INSTALL.md` platform check
+   - **File:** Voice system INSTALL.md platform check
    - **Impact:** Minor - doesn't block functionality
    - **Fix:** Either add paplay support or remove from docs
    - **Priority:** Low - mpg123/mpv work fine

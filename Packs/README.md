@@ -1,335 +1,103 @@
-<p align="center">
-  <img src="icons/packs-v2.png" alt="PAI Packs" width="256">
-</p>
+<div align="center">
+
+<img src="pai-packs-icon.png" alt="PAI Packs" width="256">
 
 # PAI Packs
 
-> The best AI in the world should be available to everyone
+</div>
 
-Right now the most powerful AI setups are being built inside companies for efficiency and profits. But the purpose of technology is to serve humans—not the other way around.
+Standalone, AI-installable capabilities for Claude Code and other AI agent systems. Each pack is a self-contained directory — point your DA at it and say "install this," and it sets everything up.
 
-**PAI Packs** are how we make that happen. Each pack is a battle-tested capability extracted from a production AI system, packaged so anyone can install it. Think of them like learning kung-fu in The Matrix—complete, tested capabilities you can download directly into your system.
+Every v5.0.0 skill ships as its own pack below. Each pack contains `README.md`, `INSTALL.md`, `VERIFY.md`, and `src/` (the actual skill source).
 
-These aren't theoretical examples or proof-of-concepts. They're the actual tools and systems running in production every day, now available to you. A full platform for magnifying yourself and your impact on the world.
-
----
-
-## Why Packs?
-
-The old approach was "here's my whole system—clone it and customize." That created a Jenga tower of dependencies where changing one piece broke three others.
-
-**Packs are different:**
-- **Self-contained** - Works without understanding the rest of the system
-- **Independently installable** - Add what you need, skip what you don't
-- **Platform-agnostic** - Works with Claude Code, OpenCode, Cursor, or custom systems
-- **AI-installable** - Give your DA the pack directory, it handles the rest
-
-**The key insight:** Give your DA the complete context it needs, and it can integrate the pack into *your* system autonomously.
-
----
-
-## Pack Structure (v2.0)
-
-Each pack is now a **directory** containing:
+## How to Install
 
 ```
-pack-name/
-├── README.md           # Pack overview, architecture, what it solves
-├── INSTALL.md          # Step-by-step installation instructions
-├── VERIFY.md           # Mandatory verification checklist
-└── src/                # Actual source code files
-    ├── hooks/          # Hook implementations (if applicable)
-    ├── tools/          # CLI tools and utilities
-    ├── skills/         # Skill definitions and workflows
-    └── config/         # Configuration files
+"Install the Research pack from PAI/Packs/Research/"
 ```
 
-### Why Directory Structure?
+Your DA reads `INSTALL.md` and walks through a 5-phase wizard: system analysis, user questions, backup, installation, verification.
 
-The previous single-file approach had limitations:
-- **Token limits** - Large packs exceeded 25k token limits
-- **Code simplification** - AI agents would "helpfully" simplify code instead of copying verbatim
-- **No linting/testing** - Code embedded in markdown couldn't be validated
+---
 
-The directory structure provides:
-- **Real code files** - TypeScript, YAML, Handlebars files that can be linted and tested
-- **Clear separation** - README for context, INSTALL for steps, VERIFY for validation
-- **Verbatim copying** - AI agents copy actual files instead of extracting from markdown
+## All Skills (v5.0.0 — 45)
 
-### AI Installation Flow (Wizard-Style)
+| Skill | What it does |
+|-------|--------------|
+| [Agents](Agents/) | Compose custom agents from base traits, voice, and specialization; manage functional teams |
+| [ApertureOscillation](ApertureOscillation/) | 3-pass scope oscillation: narrow tactical, wide strategic, then synthesis to surface design tensions |
+| [Aphorisms](Aphorisms/) | Curated aphorism collection with content matching, themed search, thinker research |
+| [Apify](Apify/) | Scrape Instagram, LinkedIn, TikTok, YouTube, Facebook, Google Maps, e-commerce via Apify actors |
+| [Art](Art/) | Static visual content across 20+ formats via Flux, Nano Banana Pro, GPT-Image-1 |
+| [ArXiv](ArXiv/) | Search and retrieve arXiv academic papers with AlphaXiv-enriched AI summaries |
+| [AudioEditor](AudioEditor/) | Whisper transcription → Claude classification → ffmpeg cuts for audio/video editing |
+| [BeCreative](BeCreative/) | Divergent ideation via Verbalized Sampling and extended thinking |
+| [BitterPillEngineering](BitterPillEngineering/) | Audit AI instruction sets for over-prompting; classify rules CUT/RESOLVE/MERGE/KEEP |
+| [BrightData](BrightData/) | 4-tier progressive scraping with auto-escalation through WebFetch, curl, browser, MCP proxy |
+| [Browser](Browser/) | Headless browser automation via agent-browser Rust CLI for batch and parallel work |
+| [ContextSearch](ContextSearch/) | 2-phase context search across session registry, work directories, and ISAs for cold-start recovery |
+| [Council](Council/) | Multi-agent collaborative debate with round-by-round transcripts and intellectual friction |
+| [CreateCLI](CreateCLI/) | Generate production TypeScript CLIs via 3-tier template system (manual, Commander, oclif) |
+| [CreateSkill](CreateSkill/) | Complete PAI skill development lifecycle — scaffold, validate, canonicalize, evaluate |
+| [Daemon](Daemon/) | Manage public daemon profile — living digital presence with deterministic security filtering |
+| [Delegation](Delegation/) | Six parallelization patterns: built-in agents, worktrees, background tasks, custom agents |
+| [Evals](Evals/) | Agent evaluation framework with code-based, model-based, and human graders; pass@k scoring |
+| [ExtractWisdom](ExtractWisdom/) | Content-adaptive wisdom extraction that detects domains and builds custom sections |
+| [Fabric](Fabric/) | Execute any of 240+ Fabric prompt patterns natively across extraction, analysis, creation |
+| [FirstPrinciples](FirstPrinciples/) | Physics-based reasoning that deconstructs problems to irreducible truths |
+| [Ideate](Ideate/) | Evolutionary ideation engine — 9-phase loop for novel solution generation |
+| [Interceptor](Interceptor/) | Real Chrome browser automation with zero CDP fingerprint; mandatory for visual verification |
+| [Interview](Interview/) | Phased conversational interview across all PAI context files (TELOS first) |
+| [ISA](ISA/) | Owns the Ideal State Artifact primitive — articulate "done" for any kind of work |
+| [IterativeDepth](IterativeDepth/) | Multi-angle exploration through 2-8 sequential passes from different scientific lenses |
+| [Knowledge](Knowledge/) | Manage typed Knowledge Archive across People, Companies, Ideas, Research with 8 link types |
+| [Loop](Loop/) | Iterative improvement loop — refine a target across multiple Algorithm cycles |
+| [Migrate](Migrate/) | Intake external content (Obsidian, Notion, Apple Notes, journals) and classify into PAI taxonomy |
+| [Optimize](Optimize/) | Autonomous optimization loop — hill-climb any target with metrics or LLM-as-judge eval |
+| [PAIUpgrade](PAIUpgrade/) | Generate prioritized PAI upgrade recommendations via 4 parallel research threads |
+| [PrivateInvestigator](PrivateInvestigator/) | Ethical people-finding and identity verification via 15 parallel research agents |
+| [Prompting](Prompting/) | Meta-prompting standard library — generate, optimize, and compose prompts programmatically |
+| [RedTeam](RedTeam/) | Adversarial analysis via 32 parallel expert agents to stress-test ideas, strategies, plans |
+| [Remotion](Remotion/) | Programmatic video with React via Remotion — compositions, sequences, motion graphics to MP4 |
+| [Research](Research/) | Multi-agent research with 4 depth modes (quick, standard, extensive, deep investigation) |
+| [RootCauseAnalysis](RootCauseAnalysis/) | Structured incident investigation: 5 Whys, Fishbone, Postmortem, Fault Tree, Kepner-Tregoe |
+| [Sales](Sales/) | Transform product docs into sales narratives with charcoal sketch art and talking points |
+| [Science](Science/) | Scientific method as a universal problem-solving algorithm — goal, hypotheses, experiments |
+| [SystemsThinking](SystemsThinking/) | Structural analysis via Iceberg, Causal Loop, Archetypes, Leverage Points, Concept Map |
+| [Telos](Telos/) | Dual-context Life OS — read and update goals, beliefs, wisdom, missions, mental models |
+| [USMetrics](USMetrics/) | 68 US economic indicators from FRED, EIA, Treasury, BLS, Census APIs |
+| [Webdesign](Webdesign/) | Web/UI design via Anthropic's Claude Design (claude.ai/design) with frontend handoff |
+| [WorldThreatModel](WorldThreatModel/) | Stress-test ideas, strategies, investments against 11 time horizons from 6 months to 50 years |
+| [WriteStory](WriteStory/) | Fiction across seven narrative layers — Storr, Pressfield, Forsyth |
 
-Packs use **wizard-style installation** that leverages Claude Code's native tools:
+---
+
+## Curated Bundles
+
+Pre-built combinations with their own install wizards. Useful when you want a thematic grouping installed in one shot.
+
+| Bundle | What's inside |
+|--------|---------------|
+| [ContextSearch](ContextSearch/) | `/context-search` and `/cs` slash commands |
+| [Agents](Agents/) | Custom agent composition |
+| [ContentAnalysis](ContentAnalysis/) | Wisdom extraction from videos, podcasts, articles, YouTube |
+| [Investigation](Investigation/) | People search and identity verification |
+| [Media](Media/) | Visual and video content — illustrations, diagrams, Remotion |
+| [Research](Research/) | Multi-agent research with quick/standard/extensive/deep modes |
+| [Scraping](Scraping/) | Bright Data + Apify scraping bundle |
+| [Telos](Telos/) | Life OS goals, beliefs, wisdom, dashboards |
+| [Thinking](Thinking/) | First principles, council, red team, science, brainstorming |
+| [USMetrics](USMetrics/) | 68 US economic indicators |
+| [Utilities](Utilities/) | Developer tools — CLI generation, skill scaffolding, Fabric, browser automation |
+
+---
+
+## Pack Structure
 
 ```
-Phase 1: System Analysis
-├── Run detection commands
-├── Check prerequisites
-├── Find conflicts
-└── Present findings to user
-
-Phase 2: User Questions (AskUserQuestion)
-├── Q1: Handle missing prerequisites
-├── Q2: Resolve conflicts (if any)
-├── Q3: Optional features (if any)
-└── Q4: Final confirmation
-
-Phase 3: Backup (if needed)
-└── Create timestamped backup
-
-Phase 4: Installation (TodoWrite for progress)
-├── Create directories
-├── Copy files from src/
-├── Install dependencies
-└── Pack-specific steps
-
-Phase 5: Verification
-└── Run all VERIFY.md checks
+PackName/
+├── README.md    # What it does and why
+├── INSTALL.md   # Step-by-step wizard for AI-assisted installation
+├── VERIFY.md    # Post-install verification checklist
+└── src/         # Source files to copy
 ```
-
-**Key tools used:**
-- **AskUserQuestion** - For user decisions at each decision point
-- **TodoWrite** - For progress tracking (user sees what's happening)
-- **VERIFY.md** - For validation (all checks must pass)
-
-See `Tools/InstallTemplate.md` for the complete INSTALL.md template.
-
----
-
-## 🚨 CRITICAL: Full Implementation Required (For AI Agents)
-
-> **FOR AI AGENTS INSTALLING PACKS:** This section is MANDATORY. Read it before installing ANY pack.
-
-### The Problem
-
-AI agents often "helpfully" simplify pack implementations. Instead of copying the full 268-line documented specification, they create a 50-line "equivalent" version. **This is WRONG.**
-
-### The Rule
-
-**Copy the COMPLETE files from `src/`. No simplification. No shortcuts. No "equivalents."**
-
-When a pack contains a 500-line TypeScript file, you copy all 500 lines. When it specifies 8 files, you copy all 8 files. When it includes detailed YAML with 100 entries, you include all 100 entries.
-
-### Why This Matters
-
-- Packs are **production-tested** - every line exists for a reason
-- "Simplified" versions break integration with other packs
-- Missing configuration causes silent failures
-- Users shouldn't need multiple correction cycles
-
-### Anti-Simplification Directives
-
-1. **NEVER reduce code complexity** - If the pack has verbose implementations, keep them verbose
-2. **NEVER skip optional sections** - "Optional" means optional for the user, not for you to omit
-3. **NEVER create "equivalent" versions** - Copy the EXACT files from `src/`
-4. **NEVER summarize YAML/JSON** - Include every field, every entry, every comment
-5. **ALWAYS complete VERIFY.md** - If any check fails, installation is NOT complete
-
-### Mandatory Completion Checklist
-
-**After every pack installation, you MUST complete the VERIFY.md checklist:**
-
-```markdown
-## Installation Verification
-
-- [ ] All directories from INSTALL.md created
-- [ ] All files from `src/` copied to target locations
-- [ ] Each code file contains COMPLETE implementation (diff check)
-- [ ] YAML/JSON files contain ALL entries (not summarized)
-- [ ] Dependencies installed (bun add, etc.)
-- [ ] Verification commands from VERIFY.md run and passed
-```
-
-**If ANY checkbox fails, you have NOT completed the installation.**
-
----
-
-## System Architecture
-
-<p align="center">
-  <img src="icons/pai-system-architecture-v3.png" alt="PAI System Architecture" width="100%">
-</p>
-
-**PAI organizes capabilities in a clear hierarchy:**
-
-```
-PAI System
-    └── Bundles (curated collections for specific goals)
-            └── Packs (individual capabilities)
-                    └── Contents (code, hooks, tools, workflows, config)
-```
-
-- **Bundles** group related packs that work well together
-- **Packs** are self-contained capabilities you can install independently
-- **Contents** are the actual code, hooks, tools, and configuration inside each pack
-
----
-
-## Available Packs (23 Total)
-
-### Infrastructure Packs (5)
-
-| Pack | Category | Description |
-|------|----------|-------------|
-| [**pai-hook-system**](pai-hook-system/) | Foundation | Event-driven automation framework - the foundation for all hook-based capabilities |
-| [**pai-core-install**](pai-core-install/) | Core | Skills + Identity + Architecture - the complete foundation with routing, response format, MEMORY system |
-| [**pai-voice-system**](pai-voice-system/) | Notifications | Voice notifications with ElevenLabs TTS and prosody enhancement for natural speech |
-| [**pai-observability-server**](pai-observability-server/) | Observability | Real-time multi-agent monitoring dashboard with WebSocket streaming |
-| [**pai-statusline**](pai-statusline/) | Display | 4-mode responsive status line with learning signal, context usage, and trend indicators |
-
-### Skill Packs (18)
-
-| Pack | Category | Description |
-|------|----------|-------------|
-| [**pai-agents-skill**](pai-agents-skill/) | Delegation | Dynamic agent composition with unique personalities, voices, and trait combinations |
-| [**pai-algorithm-skill**](pai-algorithm-skill/) | Methodology | The Algorithm implementation - ISC management, effort classification, verifiable iteration |
-| [**pai-annualreports-skill**](pai-annualreports-skill/) | Research | Annual security report aggregation and threat landscape analysis |
-| [**pai-art-skill**](pai-art-skill/) | Creativity | Visual content generation with multi-reference image support and technical diagrams |
-| [**pai-brightdata-skill**](pai-brightdata-skill/) | Scraping | Progressive URL scraping with Bright Data integration and tier escalation |
-| [**pai-browser-skill**](pai-browser-skill/) | Automation | Debug-first browser automation with Playwright - always-on diagnostics, session auto-start |
-| [**pai-council-skill**](pai-council-skill/) | Analysis | Multi-agent debate system for exploring perspectives and reaching consensus |
-| [**pai-createcli-skill**](pai-createcli-skill/) | Development | Generate TypeScript CLI tools with bun runtime |
-| [**pai-createskill-skill**](pai-createskill-skill/) | Development | Create and validate PAI skills with proper structure |
-| [**pai-firstprinciples-skill**](pai-firstprinciples-skill/) | Analysis | First principles decomposition and root cause analysis |
-| [**pai-osint-skill**](pai-osint-skill/) | Research | Open source intelligence gathering and due diligence |
-| [**pai-privateinvestigator-skill**](pai-privateinvestigator-skill/) | Research | Ethical people-finding for reconnection and verification |
-| [**pai-prompting-skill**](pai-prompting-skill/) | Methodology | Meta-prompting system with Handlebars templates and Claude best practices |
-| [**pai-recon-skill**](pai-recon-skill/) | Security | Security reconnaissance, bug bounty, and attack surface mapping |
-| [**pai-redteam-skill**](pai-redteam-skill/) | Security | Adversarial analysis with 32 specialized agents for stress testing ideas |
-| [**pai-research-skill**](pai-research-skill/) | Research | Multi-source research with parallel agent execution and Fabric patterns |
-| [**pai-system-skill**](pai-system-skill/) | Maintenance | System integrity checks, documentation updates, and security scanning |
-| [**pai-telos-skill**](pai-telos-skill/) | Life OS | Deep goal capture framework - mission, goals, beliefs, strategies, learnings |
-
----
-
-## Installation Order
-
-Packs have dependencies. Install in this order:
-
-```
-Required (install first):
-1. pai-hook-system            ← Foundation (no dependencies)
-2. pai-core-install           ← Depends on hooks, includes MEMORY system
-
-Infrastructure (install next):
-3. pai-statusline             ← Depends on core-install
-4. pai-voice-system           ← Depends on hooks, core-install
-5. pai-observability-server   ← Depends on hooks
-
-Skills (install any you need):
-6+. pai-*-skill               ← Most depend only on core-install
-```
-
-**Or install the complete [PAI Bundle](../Bundles/Official/)** which handles ordering automatically.
-
-**Or use a Full Release** from [Releases/v2.5/](../Releases/v2.5/) which includes everything pre-configured.
-
----
-
-## How to Install a Pack
-
-### Option 1: AI-Assisted (Recommended)
-
-Give the pack directory to your DA agent:
-
-```
-Install the pai-hook-system pack from PAI/Packs/pai-hook-system/.
-Use PAI_DIR="~/.config/pai" and DA="MyAI".
-```
-
-Your DA will:
-1. Read `README.md` for context
-2. Follow `INSTALL.md` step by step
-3. Copy files from `src/` to your system
-4. Complete `VERIFY.md` checklist
-
-### Option 2: Manual
-
-1. Open the pack's `INSTALL.md`
-2. Follow each step, copying files from `src/` to the specified locations
-3. Complete the `VERIFY.md` checklist to confirm success
-
----
-
-## Authentication
-
-**All API keys live in ONE place: `$PAI_DIR/.env`**
-
-Packs that require API keys (Voice, Art, etc.) all read from a single environment file. No keys should ever be stored in pack files, configs, or code.
-
-```bash
-# Copy the example and add your keys
-cp ../.env.example $PAI_DIR/.env
-nano $PAI_DIR/.env
-```
-
-See [.env.example](../.env.example) for the complete list of supported variables.
-
----
-
-## Pack Categories
-
-| Category | Purpose | Examples |
-|----------|---------|----------|
-| **Foundation** | Core infrastructure that other packs depend on | Hook System |
-| **Infrastructure** | Systems that run automatically in the background | History System |
-| **Observability** | Real-time monitoring and debugging tools | Observability Server |
-| **Routing** | Intent detection and capability dispatch | Skill System |
-| **Notifications** | User feedback and accessibility | Voice System |
-| **Personality** | Identity, response format, principles | Identity |
-| **Delegation** | Agent orchestration and parallel execution | Agents Skill |
-| **Creativity** | Visual and creative content generation | Art Skill |
-| **Methodology** | Prompt engineering and meta-prompting | Prompting Skill |
-| **Automation** | Browser automation and web verification | Browser Skill |
-
----
-
-## Creating Your Own Pack
-
-See [PAIPackTemplate.md](../Tools/PAIPackTemplate.md) for the complete pack specification.
-See [InstallTemplate.md](../Tools/InstallTemplate.md) for the wizard-style INSTALL.md template.
-
-**Quick checklist for directory-based packs:**
-- [ ] `README.md` with YAML frontmatter, problem/solution, architecture
-- [ ] `INSTALL.md` with wizard-style phases (analysis, questions, install, verify)
-- [ ] `VERIFY.md` with mandatory completion checklist
-- [ ] `src/` directory with actual code files (not embedded in markdown)
-- [ ] 256x256 transparent icon in `icons/`
-- [ ] Complete, working code (no snippets or placeholders)
-
----
-
-## Pack Quality Standards
-
-Every pack in this directory must be:
-
-1. **Complete** - Everything needed to install, no missing components
-2. **Self-contained** - Works without external documentation
-3. **Tested** - Verified working in production (extracted from Kai)
-4. **Sanitized** - No personal data, credentials, or hardcoded paths
-5. **Documented** - Clear problem statement, solution, and examples
-6. **Verifiable** - VERIFY.md checklist confirms successful installation
-
----
-
-## Migration from v1.0 (Single-File) to v2.0 (Directory)
-
-If you have existing single-file packs:
-
-1. Create directory with pack name (e.g., `pai-hook-system/`)
-2. Extract frontmatter and overview sections to `README.md`
-3. Extract installation steps to `INSTALL.md`
-4. Extract verification steps to `VERIFY.md`
-5. Extract code blocks to actual files in `src/`
-6. Update any pack references to use directory paths
-
----
-
-## Related
-
-- [**Bundles/**](../Bundles/) - Curated collections of packs
-- [**PAIPackTemplate.md**](../Tools/PAIPackTemplate.md) - Full pack specification
-- [**README.md**](../README.md) - PAI project overview
-
----
-
-*Each pack is extracted from Daniel Miessler's production Kai system - battle-tested capabilities packaged for anyone to use.*
